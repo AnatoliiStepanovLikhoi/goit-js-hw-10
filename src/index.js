@@ -40,6 +40,8 @@ function onSearchboxInput(event) {
     clearCountriesContainer();
 
     const countryName = event.target.value.trim();
+
+    if (countryName === '') return;
     // console.log(countryName);
     fetchCountries(countryName).then(createMarkup).catch(showError)
 };
